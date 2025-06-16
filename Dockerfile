@@ -1,5 +1,7 @@
+# Use Debian-based n8n for Puppeteer compatibility
 FROM n8nio/n8n:latest-debian
 
+# Install Puppeteer dependencies
 RUN apt-get update && apt-get install -y \
   wget \
   ca-certificates \
@@ -24,6 +26,11 @@ RUN apt-get update && apt-get install -y \
   libxss1 \
   lsb-release
 
+# Install Puppeteer
 RUN npm install puppeteer
 
+# Copy Puppeteer script
 COPY ./data/scrapers/lol-scraper.js /usr/local/bin/lol-scraper.js
+
+# Debug marker
+RUN echo "✅ Custom Dockerfile has been used!" > /dockerfile-used.txt

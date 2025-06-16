@@ -25,4 +25,5 @@ RUN apt-get update && apt-get install -y \
   lsb-release
 
 RUN npm install puppeteer
+
 COPY ./data/scrapers /scrapers

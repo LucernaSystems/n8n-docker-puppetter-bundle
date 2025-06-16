@@ -26,4 +26,4 @@ RUN apt-get update && apt-get install -y \
 
 RUN npm install puppeteer
 
-COPY ./data/scrapers /scrapers
+COPY ./data/scrapers/lol-scraper.js /usr/local/bin/lol-scraper.js

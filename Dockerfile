@@ -1,4 +1,4 @@
-FROM n8nio/n8n:latest
+FROM n8nio/n8n:latest-debian
 
 RUN apt-get update && apt-get install -y \
   wget \
